@@ -1,0 +1,20 @@
+version: ""
+services:
+  php:
+    build:
+      context: ./
+      dockerfile: ./server/Dockerfile
+    container_name: Examen_Server_Martinon
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - ./website:/var/www/html
+  ssh:
+    build:
+      context: ./
+      dockerfile: ./ssh/Dockerfile
+    container_name: examen_ssh_Martinon
+    restart: always
+volumes:
+  html: {}
